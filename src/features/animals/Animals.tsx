@@ -71,11 +71,21 @@ const Animals = () => {
           {animals.map(animal => (
             <Card
               key={animal.id}
-              sx={{ width: "10rem", height: "10rem", cursor: "pointer" }}
+              sx={{
+                width: { xs: "6rem", md: "10rem" },
+                height: { xs: "6rem", md: "10rem" },
+                cursor: "pointer",
+                backgroundColor: "transparent",
+              }}
               onMouseDown={() => playAnimalSound(animal)}
               onTouchStart={() => playAnimalSound(animal)}
             >
-              <CardMedia component="img" image={animal.img} alt="Paella dish" />
+              <CardMedia
+                sx={{}}
+                component="img"
+                image={animal.img}
+                alt="Paella dish"
+              />
             </Card>
           ))}
         </Stack>
