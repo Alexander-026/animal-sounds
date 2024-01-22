@@ -2,7 +2,7 @@ import Animals from "./features/animals/Animals"
 
 const App = () => {
   return (
-    <div>
+    <div >
       <Animals/>
     </div>
   )
