@@ -8,13 +8,15 @@ import {
   CardMedia,
   Box,
 } from "@mui/material"
-import CuwImg from "/cow.avif"
-import DogImg from "/dog.avif"
-import CatImg from "/cat.avif"
+import CuwImg from "/cow.png"
+import DogImg from "/dog.png"
+import CatImg from "/cat.png"
+import HorseImg from "/horse.png"
 
 const CuwVoice: HTMLAudioElement = new Audio("/cow.mp3")
 const DogVoice: HTMLAudioElement = new Audio("/dog.mp3")
 const CatVoice: HTMLAudioElement = new Audio("/cat.mp3")
+const HorseVoice: HTMLAudioElement = new Audio("/horse.mp3")
 
 type Animal = {
   id: string
@@ -40,6 +42,11 @@ const animals: Animal[] = [
     img: CatImg,
     voice: CatVoice,
   },
+  {
+    id: "4",
+    img: HorseImg,
+    voice: HorseVoice,
+  },
 ]
 
 const Animals = () => {
@@ -60,7 +67,7 @@ const Animals = () => {
   return (
     <Box sx={{ background: "#262626", minHeight: "100vh", py: "1rem" }}>
       <Container>
-        <Stack direction={"row"} gap={2}>
+        <Stack direction={"row"} gap={2} flexWrap="wrap">
           {animals.map(animal => (
             <Card
               key={animal.id}
